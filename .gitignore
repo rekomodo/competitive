@@ -2,3 +2,6 @@
 .vscode
 *.exe
 programmy.code-workspace
+test1.cpp
+test2.cpp
+compile.bat
