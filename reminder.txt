@@ -1,0 +1,13 @@
+set<T> can only hold ONE of each key, the keys are unique
+multiset<T> can hold MULTIPLE of each key, the keys are not unique
+for most of my applications, multiset is the right choice
+
+(1 << j) is the same as 2^j
+
+the number of pairs a*b that satisfy the inequation a*b <= x is x*log(x)
+
+gcd(a - b, b) = gcd(a, b) when a > b
+
+dont use upper and lower bound with pairs, create a custom struct with an < operator
+
+you can move DSU elements individually for low performance cost - O(N log N) for all joins

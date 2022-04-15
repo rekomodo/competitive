@@ -1,0 +1,1 @@
+g++ -Wshadow -Wall -O2 -Wno-unused-result test1.cpp
