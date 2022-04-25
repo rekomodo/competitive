@@ -11,3 +11,5 @@ gcd(a - b, b) = gcd(a, b) when a > b
 dont use upper and lower bound with pairs, create a custom struct with an < operator
 
 you can move DSU elements individually for low performance cost - O(N log N) for all joins
+
+inline bool operator functions to be defined for usage of structs in sets or multisets

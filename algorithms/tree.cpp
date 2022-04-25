@@ -7,9 +7,10 @@ typedef vector<int> vi;
 typedef vector<vi> vvi;
 typedef pair<int, int> pii;
 
+// 1-based
 struct tree
 {
-    int root, nodes;
+    int nodes;
     vvi adj;
     vi parent, depth, subtreeSize;
     tree(int _nodes) : nodes(_nodes)
@@ -19,24 +20,17 @@ struct tree
         depth = subtreeSize = vi(nodes + 1, 0);
     }
 
-    void init(int _root)
-    {
-        root = _root;
-        initDFS(root);
-        initLift();
-    }
-
-    void initDFS(int src, int p = -1)
+    void initDFS(int src, int p = 0)
     {
         parent[src] = p;
         subtreeSize[src] = 1;
+        depth[src] = depth[p] + 1;
         for (int a : adj[src])
         {
             if (a == p)
                 continue;
 
             initDFS(a, src);
-            depth[a] = depth[src] + 1;
             subtreeSize[src] += subtreeSize[a];
         }
     }
@@ -50,11 +44,11 @@ struct tree
         power++;
 
         lift = vvi(nodes + 1, vi(power, 0));
-        for (int i = 0; i <= nodes; i++)
+        for (int i = 1; i <= nodes; i++)
             lift[i][0] = parent[i];
 
-        for (int j = 0; j < power; j++)
-            for (int i = 0; i <= nodes; i++)
+        for (int j = 1; j < power; j++)
+            for (int i = 1; i <= nodes; i++)
                 lift[i][j] = lift[lift[i][j - 1]][j - 1];
     }
 
