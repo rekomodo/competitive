@@ -15,7 +15,7 @@ struct Trie
         bool wordEnd = false;
         node()
         {
-            for (node *u : children)
+            for (node *&u : children)
                 u = nullptr;
         }
     };
