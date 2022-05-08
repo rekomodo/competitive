@@ -32,10 +32,7 @@ struct segmentTree
         tree = vector<node>(size + 1, _nullNode);
     }
 
-    virtual node merge(node &a, node &b)
-    {
-        return node();
-    }
+    virtual node merge(node &a, node &b) = 0;
 
     void update(int i, node v)
     {
