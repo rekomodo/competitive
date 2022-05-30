@@ -13,3 +13,5 @@ dont use upper and lower bound with pairs, create a custom struct with an < oper
 you can move DSU elements individually for low performance cost - O(N log N) for all joins
 
 inline bool operator functions to be defined for usage of structs in sets or multisets
+
+check if distance has already been improved before continuing to process the vertex in dijkstra
