@@ -4,3 +4,5 @@
 programmy.code-workspace
 test*.cpp
 compile.bat
+oi/
+.gitignore
