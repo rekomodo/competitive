@@ -1,1 +1,1 @@
-g++ -std=c++17 -Wshadow -Wall -O2 -Wno-unused-result test1.cpp
+g++ -std=c++17 -Wshadow -Wall -O2 -Wno-unused-result -D LOCALDEBUG test1.cpp
