@@ -4,19 +4,21 @@ using namespace std;
 // singly linked list
 // la actualice mucho en la mañana
 
+template <class T>
 struct node
 {
-	int data;
+	T data;
 	node *next = NULL;
 };
 
+template <class T>
 class linkedList
 {
 public:
 	int size = 0;
-	node *head = new node();
+	node<T> *head = new node<T>();
 
-	bool pushOnEmpty(int val)
+	bool pushOnEmpty(T val)
 	{
 		if (size == 0)
 		{
@@ -27,7 +29,7 @@ public:
 		return false;
 	}
 
-	node *pushFront(int val)
+	node *pushFront(T val)
 	{
 		if (pushOnEmpty(val))
 			return head;
@@ -55,11 +57,11 @@ public:
 		cout << '\n';
 	}
 
-	node *insert(node *after, int val)
+	node<T> *insert(node<T> *after, T val)
 	{
 		if (pushOnEmpty(val))
 			return head;
-		node *newNode = new node();
+		node<T> *newNode = new node<T>();
 		(*newNode).data = val;
 		(*newNode).next = (*after).next;
 		(*after).next = newNode;
@@ -67,14 +69,14 @@ public:
 		return newNode;
 	}
 
-	void pushBack(int val)
+	void pushBack(T val)
 	{
 		if (pushOnEmpty(val))
 			return;
-		node *cur = head;
+		node<T> *cur = head;
 		while ((*cur).next != NULL)
 			cur = (*cur).next;
-		node *newNode = new node();
+		node<T> *newNode = new node<T>();
 		(*cur).next = newNode;
 		(*newNode).data = val;
 	}
@@ -89,7 +91,7 @@ public:
 		delete headPtr;
 	}
 
-	void erase(node *x)
+	void erase(node<T> *x)
 	{
 		node *cur = head;
 		while (cur->next != x)
@@ -98,7 +100,7 @@ public:
 		delete x;
 	}
 
-	void erase(int val)
+	void erase(T val)
 	{
 		node *cur = head;
 		if (cur->data == val)
@@ -118,9 +120,9 @@ public:
 
 int main()
 {
-	linkedList *l = new linkedList();
-	node *n1 = l->pushFront(1); // O(n)
-	l->printList();				// O(n)
+	linkedList<int> *l = new linkedList<int>();
+	node<int> *n1 = l->pushFront(1); // O(n)
+	l->printList();					 // O(n)
 
 	l->insert(n1, 7);				// O(1)
 	l->insert(l->insert(n1, 6), 3); // O(1)
@@ -130,7 +132,4 @@ int main()
 	l->erase(6);
 
 	l->printList(); // O(n)
-
-	list<int> linked;
-	linked.insert(3);
 }

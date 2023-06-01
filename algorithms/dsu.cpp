@@ -31,8 +31,10 @@ struct DSU
     {
         a = find(a);
         b = find(b);
+
         if (a == b)
             return;
+
         if (s[a] > s[b])
             swap(a, b);
 
@@ -40,9 +42,3 @@ struct DSU
         p[a] = b;
     }
 };
-
-int main()
-{
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-}

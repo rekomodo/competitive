@@ -7,7 +7,7 @@ typedef vector<int> vi;
 typedef vector<vi> vvi;
 typedef pair<int, int> pii;
 
-// 1-based
+// 1-based LCA
 struct tree
 {
     int nodes;

@@ -1,9 +1,3 @@
-set<T> can only hold ONE of each key, the keys are unique
-multiset<T> can hold MULTIPLE of each key, the keys are not unique
-for most of my applications, multiset is the right choice
-
-(1 << j) is the same as 2^j
-
 the number of pairs a*b that satisfy the inequation a*b <= x is x*log(x)
 
 gcd(a - b, b) = gcd(a, b) when a > b
@@ -15,3 +9,8 @@ you can move DSU elements individually for low performance cost - O(N log N) for
 inline bool operator functions to be defined for usage of structs in sets or multisets
 
 check if distance has already been improved before continuing to process the vertex in dijkstra
+
+stars and bars:
+you have n objects and k bins
+if the bins can have 0 objects: ans = C(n + k - 1, k - 1) = C(n + k - 1, n)
+if the bins have at least 1 object: ans = C(n - 1, k - 1)

@@ -22,7 +22,7 @@ struct SegmentTree
         tree.resize(treeSize + 1, Node());
     }
 
-    void update(int i, Node k)
+    virtual void update(int i, Node k)
     {
         int in = i + treeSize / 2;
         tree[in] = k;

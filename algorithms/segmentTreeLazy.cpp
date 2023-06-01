@@ -13,14 +13,14 @@ struct node
     node(ll _value = 0) : value(_value) {}
 };
 
-struct segmentTree
+struct segmentTreeLazy
 {
     int size, power2 = 1;
     node nullNode = node();
     vector<node> tree;
     vector<ll> lazy;
 
-    segmentTree(int n, node _nullNode)
+    segmentTreeLazy(int n, node _nullNode)
     {
         nullNode = _nullNode;
         while (power2 < n)
@@ -80,9 +80,9 @@ struct segmentTree
     }
 };
 
-struct sumSegmentTree : segmentTree
+struct sumSegmentTree : segmentTreeLazy
 {
-    sumSegmentTree(int n, node _nullNode) : segmentTree(n, _nullNode) {}
+    sumSegmentTree(int n, node _nullNode) : segmentTreeLazy(n, _nullNode) {}
     node merge(node &a, node &b)
     {
         return a.value + b.value;
