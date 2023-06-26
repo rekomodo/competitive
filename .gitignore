@@ -1,4 +1,5 @@
 .vs
+*.json
 .vscode
 *.exe
 programmy.code-workspace
@@ -9,7 +10,9 @@ oi/
 .gitignore
 .cph
 *.bin
-
+*.out
+__pycache__/
+jsonify.py
 # Added by cargo
 
 /target
